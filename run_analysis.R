@@ -83,5 +83,5 @@
   XMeanperSubject<-apply(X, 1, mean)
   YMeanperSubject<-apply(Y, 1, mean)
   
-  Means<-c(XmeanperActivity, XMeanperSubject, YMeanperActivity, YMeanperSubject)
-  write.table(Means, file = "Means.csv", sep=",", col.names = 1, row.name=FALSE)
+  FinalMeans<-cbind(XMeanperSubject, YMeanperSubject, XmeanperActivity, YMeanperActivity)
+  write.table(FinalMeans, file="FinalMeans.csv", row.names=FALSE)
