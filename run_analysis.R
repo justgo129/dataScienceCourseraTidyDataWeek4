@@ -84,4 +84,4 @@
   YMeanperSubject<-apply(Y, 1, mean)
   
   Means<-c(XmeanperActivity, XMeanperSubject, YMeanperActivity, YMeanperSubject)
-  write.table(Means, file = "Means.csv", sep=",", col.names = 1)
+  write.table(Means, file = "Means.csv", sep=",", col.names = 1, row.name=FALSE)
