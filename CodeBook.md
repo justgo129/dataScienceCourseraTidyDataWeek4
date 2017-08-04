@@ -41,8 +41,7 @@ In order to create the dataset mentioned in step #5 of the instructions: computa
 
     variableactivitysubject <-aggregate(xysubject, by=list(Y, subject), FUN=mean, na.rm=TRUE)
 
-As shown above, the file *activity_labels* contained a key, mapping each of the six values of Y to the name of a general activity.
-The exercise concluded when the information from *activity_labels* was merged into variableactivitysubject in order to provide meaningful information, retaining the same data frame name: *variableactivitysubject*. 
+As shown above, the file *activity_labels* contained a key, mapping each of the six numeric values of Y to the name of a general activity.  The exercise concluded when the information from *activity_labels* was merged into variableactivitysubject in order to provide meaningful information, retaining the same data frame name: *variableactivitysubject*. 
 
 # Appendix 1: Names of variables employed in analysis (79) todo
 
