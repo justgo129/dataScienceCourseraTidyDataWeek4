@@ -19,6 +19,10 @@ codes for these six broader activities could also be found in the *Ytraining* an
 - 6 = LAYING
  
 # Process 
+## Libraries needed in this analysis:
+- dplyr
+- stringr
+
 ## Appending files - see also run_analysis.R for the complete R code
 The “training” and “test” folders were extracted from the data available at the aforementioned link.  
 The command *rbind* was used to:
