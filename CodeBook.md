@@ -49,10 +49,17 @@ In order to create the dataset mentioned in step #5 of the instructions: computa
 
     XYsubject<-aggregate(XYsubject, by=list(XYsubject[,80], XYsubject[,81]), 
                     FUN=mean, na.rm=TRUE)
+                   
 
-As shown above, the file *activity_labels* contained a key, mapping each of the six numeric values of Y to the name of a general activity.  The exercise concluded when the information from *activity_labels* was merged into variableactivitysubject in order to provide meaningful information, retaining the same data frame name: *variableactivitysubject*. 
+As shown above, the file *activity_labels* contained a key, mapping each of the six numeric values of Y to the name of a general activity.  A *merge* was therefore performed in order to bring the verbal description of each activity code into the final answer
+for the exercise:
+    XYsubject <- merge(XYsubject, activity_labels, 
+                    by.x=c("activity_number"), by.y=c("V1")) 
+                    
+The exercise concluded when the information from *activity_labels* was merged into a new *XYsubject* in order to provide meaningful information, retaining the same data frame name: *XYsubject*.  *XYsubject* was exported from R as week4.txt and uploaded to Coursera.
 
-# Appendix 1: Names of variables employed in analysis (79) - note that because the names were "tidy"ed, they are now self-explanatory, negating the need for a formal explanatory section in the codebook.
+# Appendix 1: Names of variables employed in analysis (79):
+note that because the names were "tidy"ed, they are now self-explanatory, negating the need for a formal explanatory section in the codebook.
  
 "timeofbodyaccelerationmeanxdimension"                                
 "timeofbodyaccelerationmeanydimension"                                  
