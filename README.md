@@ -4,7 +4,7 @@ run_analysis.R performs the following tasks: (1) uses R's "rbind" command to com
 
 Finally, means were computed across all activities (i.e., one mean per each of 561 activity) and for each of the participants.
 
-*Please note that the project invokes the dplyr and stringr libraries.*
+*Please note that the project invokes the "dplyr" and "stringr" libraries.*
 
 The underlying data analyzed are available from:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
