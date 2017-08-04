@@ -18,20 +18,22 @@ codes for these six broader activities could also be found in the *Ytraining* an
 - 5 = STANDING
 - 6 = LAYING
  
- # Process - see also run_analysis.R for the complete R code
+# Process 
+## Appending files - see also run_analysis.R for the complete R code
 The “training” and “test” folders were extracted from the data available at the aforementioned link.  
 The command *rbind* was used to:
  - Append the *Xtest* file to *Xtraining*, creating a single file called *X*.
  - Append the *Ytest* file to *Ytraining*, creating a single file called *Y*.
  - Append the *subjecttest* file to *subjecttraining*, creating a single file called *subject*.
  
- # More notes about files
+## More notes about files
 - The 561 names in features.txt match those in *X* except *X* contained 10299 values for each of the 561 values, whereas features.txt just contained the names of the variables.  The dimensions of *X* were therefore 10299 rows * 561 columns.
 - The values of *Y* varied between 1 and 6, corresponding to the activities to which the feature vector variables can be mapped.  The dimensions of Y were 10299 rows * 1 column.  
 - The values of *subject* varied between 1 and 30, corresponding to the 30 participants in the study.  The dimensions of *subject* were 
 
 Nonetheless, 10299 values existed for each variable given that multiple participants partook in multiple activities multiple times.  
 
+## Tidying
 Since the assignment mandated the sole retention of columns dealing with the mean or standard deviation of an activity, the *X<-X[!is.na(names(X))]* command was used to delete all columns that measured other aspects of parameters.  This left X with a dimension of 10299 rows * 79 columns instead of 10299 rows * 561 columns.
 
 Using the *gsub* command, the column names of file X were made "tidy" by:
