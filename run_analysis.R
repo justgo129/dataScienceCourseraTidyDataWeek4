@@ -109,4 +109,6 @@ colnames(XYsubject)<-tolower(colnames(XYsubject))  #one of the reqs of "tidy"
 
  # (5) Write result of Step #5 to text file:
 write.table(XYsubject, 
-            "c://users/justin.goldstein//Documents//tidydata//week4.txt", sep=",")
+            "C:\\Users\\justin.goldstein\\Documents\\tidydata\\week4.txt", 
+            row.name=FALSE,
+            sep=",")
