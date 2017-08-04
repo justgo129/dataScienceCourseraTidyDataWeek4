@@ -50,11 +50,9 @@ In order to create the dataset mentioned in step #5 of the instructions: computa
     XYsubject<-aggregate(XYsubject, by=list(XYsubject[,80], XYsubject[,81]), 
                     FUN=mean, na.rm=TRUE)
                    
+As shown above, the file *activity_labels* contained a key, mapping each of the six numeric values of Y to the name of a general activity.  A *merge* was therefore performed in order to bring the verbal description of each activity code (see above) into the final answer for the exercise:
 
-As shown above, the file *activity_labels* contained a key, mapping each of the six numeric values of Y to the name of a general activity.  A *merge* was therefore performed in order to bring the verbal description of each activity code into the final answer
-for the exercise:
-    XYsubject <- merge(XYsubject, activity_labels, 
-                    by.x=c("activity_number"), by.y=c("V1")) 
+    XYsubject <- merge(XYsubject, activity_labels, by.x=c("activity_number"), by.y=c("V1")) 
                     
 The exercise concluded when the information from *activity_labels* was merged into a new *XYsubject* in order to provide meaningful information, retaining the same data frame name: *XYsubject*.  *XYsubject* was exported from R as week4.txt and uploaded to Coursera.
 
