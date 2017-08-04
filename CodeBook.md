@@ -9,12 +9,12 @@ aforementioned zip file.  **These variables for feature vectors are what we simp
 
 The 561 variables of the feature vectors fall into six broader categories, spelled out in the *activity_labels* file.    The numeric
 codes for these six broader activities could also be found in the *Ytraining* and *Ytest* files.  The numeric codes and their regular meanings (per the *activity_labels* file were as follows:
-- 1 WALKING
-- 2 WALKING_UPSTAIRS
-- 3 WALKING_DOWNSTAIRS
-- 4 SITTING
-- 5 STANDING
-- 6 LAYING
+- 1 = WALKING
+- 2 = WALKING_UPSTAIRS
+- 3 = WALKING_DOWNSTAIRS
+- 4 = SITTING
+- 5 = STANDING
+- 6 = LAYING
  
  # Process - see also run_analysis.R for the complete R code
 The “training” and “test” folders were extracted from the data available at the aforementioned link.  
@@ -35,7 +35,7 @@ Since the assignment mandated the sole retention of columns dealing with the mea
 Using the *gsub* command, the column names of file X were made "tidy" by:
 - spelling out abbreviations (e.g., changing "std" to "standarddeviation", changing "X" to "Xdimension", "acc" to "acceleration", etc.)
 - removing parentheses and hyphens
-- having all column names lower-case (per the requirements of one of the class slides).
+- having all column names lower-case (per the requirements of one of the class slides).  This led to the revision of the original variable names (from *X* and features.txt) to those shown below in Appendix 1 of this CodeBook.
 
 In order to create the dataset mentioned in step #5 of the instructions: computation of the value of variable per activity per activity per subject, the activity (*Y*) and *subject* files were added to the existing *X* dataframe using *cbind*, thus creating a new data frame called *xysubject*.  *xysubject* now had dimension 10299 rows * 81 columns, with columns 80 and 81 being *Y* and *subject*, respectively.  The required computation was performed using the following command:
 
@@ -44,6 +44,7 @@ In order to create the dataset mentioned in step #5 of the instructions: computa
 As shown above, the file *activity_labels* contained a key, mapping each of the six values of Y to the name of a general activity.
 The exercise concluded when the information from *activity_labels* was merged into variableactivitysubject in order to provide meaningful information, retaining the same data frame name: *variableactivitysubject*. 
 
+# Appendix 1: Names of variables employed in analysis (79) todo
 
 -
 
